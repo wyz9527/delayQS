@@ -20,7 +20,7 @@ config.xml  -- seelog配置
   "retryIdKey": "DelayQs:retry_id", //redis key 队列 需要重试的任务id
   "bodyKey": "DelayQs:body", //redis key hash key  任务id=> 任务信息
   "failKey": "DelayQs:fail_job", //redis key  队列 尝试多次后执行失败的任务信息
-  "maxRetryNum": 3, //任务重新执行，最大尝试次数
+  "maxRetryNum": 3, //失败最大尝试次数
   "retryInterval" : 5, //获取重试任务的时间间隔
   "pid" : "/var/log/delayQs/delayqs.pid" //pid 保存文件
 }
