@@ -48,7 +48,7 @@ config.xml  -- seelog配置
 </seelog>
 ```
 ### 任务格式规定
-···go
+```go
 type delayJob struct {
 	Id string //任务id
 	Body interface{} `json:"body"` //任务的数据 json格式
