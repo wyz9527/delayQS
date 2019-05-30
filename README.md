@@ -24,7 +24,7 @@ config.xml  -- seelog配置
   "retryInterval" : 5, //获取重试任务的时间间隔
   "pid" : "/var/log/delayQs/delayqs.pid" //pid 保存文件
 }
-···
+```
 
 ### config.xml 配置说明
 ```xml
