@@ -76,7 +76,7 @@ go get -u github.com/wyz9527/delayQS/tree/master/delayQS
 ```
 
 ### 处理订单超时未付款 orderTimeOut.php
-···php
+```php
 <?php
 	$body = trim( $_POST['body'] );
 	$sign = trim( $_POST['sign'] );
