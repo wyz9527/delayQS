@@ -1,0 +1,20 @@
+<seelog type="asynctimer" asyncinterval="5000000" minlevel="trace" maxlevel="error">
+    <outputs formatid="info">
+        <filter levels="error">
+            <buffered formatid="info" size="10000" flushperiod="1000">
+                <rollingfile type="date" filename="./logs/error.log" datepattern="02.01.2006" fullname="true" maxrolls="30"/>
+            </buffered>
+        </filter>
+        <filter levels="info">
+            <buffered formatid="info" size="10000" flushperiod="1000">
+                <rollingfile type="date" filename="./logs/info.log" datepattern="02.01.2006" fullname="true" maxrolls="30"/>
+            </buffered>
+        </filter>
+    </outputs>
+
+
+
+    <formats>
+        <format id="info" format="%Date %Time [%LEV] [%File:%Line] [%Func] %Msg%n" />
+    </formats>
+</seelog>

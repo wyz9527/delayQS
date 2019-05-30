@@ -1,0 +1,13 @@
+{
+  "redis": "redis://localhost:6379/",
+  "connections": 4,
+  "concurrency": 2,
+  "startTime": 0,
+  "key": "DelayQs:job_zqueue",
+  "retryIdKey": "DelayQs:retry_id",
+  "bodyKey": "DelayQs:body",
+  "failKey": "DelayQs:fail_job",
+  "maxRetryNum": 3,
+  "retryInterval" : 5,
+  "pid" : "/var/log/delayQs/delayqs.pid"
+}
