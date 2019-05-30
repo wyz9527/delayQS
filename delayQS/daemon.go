@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"syscall"
@@ -35,6 +36,20 @@ func init() {
 			}
 		}
 		if *opt == "start"{
+			pidFile := viper.GetString("pid")
+			pf, _ := os.OpenFile(pidFile, os.O_RDWR, 0)
+			defer pf.Close()
+			if pf != nil{
+				pd, _ := ioutil.ReadAll( pf )
+				old_pid, _ := strconv.Atoi( strings.Replace(string(pd),"\n","", -1) )
+				if old_pid > 0{
+					if err := procMethod( old_pid ); err == nil{
+						fmt.Println("程序运行中，请不要重复启动")
+						os.Exit(0)
+					}
+				}
+			}
+
 			cmd := exec.Command(os.Args[0], args...)
 			cmd.Start()
 			fmt.Println("[PID]", cmd.Process.Pid)
@@ -86,4 +101,9 @@ func init() {
 		}
 	}
 
+}
+
+func procMethod(pid int) error {
+	_, err := os.Stat(filepath.Join("/proc", strconv.Itoa(pid)))
+	return err
 }
