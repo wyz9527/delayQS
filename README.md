@@ -59,7 +59,7 @@ type delayJob struct {
 
 ## 安装
 ```shell
-go get -u github.com/wyz9527/delayQS/tree/master/delayQS
+go get -u github.com/wyz9527/delayQS
 ```
 
 ## 示列
@@ -111,7 +111,7 @@ go get -u github.com/wyz9527/delayQS/tree/master/delayQS
 package main
 
 import (
-	"github.com/wyz9527/delayQS/tree/master/delayQS"
+	"github.com/wyz9527/delayQS/delayQS"
 	"fmt"
 )
 
