@@ -47,6 +47,15 @@ config.xml  -- seelog配置
     </formats>
 </seelog>
 ```
+### 任务格式规定
+···go
+type delayJob struct {
+	Id string //任务id
+	Body interface{} `json:"body"` //任务的数据 json格式
+	Callback string `json:"callback"` //回调地址 url
+	Sign string `json:"sign"` //验证字符串
+}
+```
 
 ## 安装
 ```shell
