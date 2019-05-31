@@ -104,6 +104,7 @@ go get -u github.com/wyz9527/delayQS
 	}
 	
 	//把$data['orderId']状态设置为关闭....
+        echo "success"; //打印success字符串，告知go程序处理成功。
 ```
 
 ### test.go
